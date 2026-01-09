@@ -12,6 +12,8 @@ from reports import (
 
 def main():
     database = DATABASE[:] if isinstance(DATABASE, list) else None
+    # DATABASE[:] создает копию списка, чтобы защитить исходные данные от изменений при сортировке.
+    # Функция isinstance используется для проверки принадлежности объекта к определённому типу данных
 
     if not validate_database(database):
         return
@@ -47,4 +49,5 @@ def main():
 
 
 if __name__ == "__main__":  # Проверка, что файл запущен напрямую
+
     main()  # Запуск
